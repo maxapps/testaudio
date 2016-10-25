@@ -7,5 +7,5 @@
   <author email="maxapps@gmail.com">
     Jeff Carver
   </author>
-  <plugin name="cordova-plugin-nativeaudio" version="3.0.6" />
+  <plugin name="cordova-plugin-nativeaudio" version="3.0.7" />
 </widget>
