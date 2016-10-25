@@ -1,20 +1,30 @@
-var page = new tabris.Page({
-  title: 'Example App',
-  topLevel: true
-});
+tabris.create('Page', {
+        title: 'App',
+        topLevel: true
+}).append(
+        tabris.create('TextView', {
+                text: 'cordova-plugin-nativeaudio'
+        })
+).open();
 
-var button = new tabris.Button({
-  centerX: 0, top: 100,
-  text: 'Native Widgets'
-}).appendTo(page);
-
-var textView = new tabris.TextView({
-  centerX: 0, top: [button, 50],
-  font: '24px'
-}).appendTo(page);
-
-button.on('select', function() {
-  textView.set('text', 'Totally Rock!');
-});
-
-page.open();
+window.plugins.NativeAudio.preloadComplex('mysound',
+        'demo.mp3',
+        1, // volume
+        1, // voices
+        0, // delay
+        function() {
+                console.info('Preload success: ', arguments);
+                window.plugins.NativeAudio.play('mysound', function(msg) {
+                        console.info('Play success: ', arguments)
+                },
+                function(msg) {
+                        console.warn('Play error: ', arguments);
+                },
+                function(msg) {
+                        console.info('Play complete: ', arguments);
+                });
+        },
+        function(msg) {
+                console.warn('Preload error: ', arguments);
+        }
+);

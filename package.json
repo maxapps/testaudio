@@ -1,5 +1,5 @@
 {
-  "name": "com.maxapps.audiotest",
+  "name": "AudioTest",
   "version": "0.1.0",
   "main": "app.js",
   "private": true,
