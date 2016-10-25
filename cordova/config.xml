@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.maxapps.audiotest" version="0.1.0">
+  <name>AudioTest</name>
+  <description>
+    Testing audio plugin
+  </description>
+  <author email="maxapps@gmail.com">
+    Jeff Carver
+  </author>
+</widget>
