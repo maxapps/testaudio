@@ -7,13 +7,13 @@ tabris.create('Page', {
         })
 ).open();
 
-// window.plugins.NativeAudio.preloadComplex('mysound',
-//         tabris.app.getResourceLocation('demo.mp3'),
-//         1, // volume
-//         1, // voices
-//         0, // delay
-window.plugins.NativeAudio.preloadSimple('mysound',
+window.plugins.NativeAudio.preloadComplex('mysound',
         tabris.app.getResourceLocation('demo.mp3'),
+        1, // volume
+        1, // voices
+        0, // delay
+// window.plugins.NativeAudio.preloadSimple('mysound',
+//         tabris.app.getResourceLocation('demo.mp3'),
         function() {
                 console.info('Preload success: ', arguments);
                 window.plugins.NativeAudio.play('mysound', function(msg) {
