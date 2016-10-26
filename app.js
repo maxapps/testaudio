@@ -3,46 +3,33 @@ tabris.create('Page', {
         topLevel: true
 }).append(
         tabris.create('TextView', {
-                text: 'cordova-plugin-nativeaudio'
+                text: 'cordova-tabris-nativeaudio'
         })
 ).open();
-
-
-var Yanap = window.plugins.Yanap;
- 
-var mySound = new Yanap.AudioInstance(Yanap.AUDIO_TYPE.SOUND, function(iStatus) {
-  if (iStatus === Yanap.AUDIO_INSTANCE_STATUS.ERROR) {
-    console.log('ERROR!');
-  } else if(iStatus === Yanap.AUDIO_INSTANCE_STATUS.LOADED) {
-    mySound.play();
-  }
-});
-mySound.load('demo.mp3');
-
 
 // window.plugins.NativeAudio.preloadComplex('mysound',
 //         tabris.app.getResourceLocation('demo.mp3'),
 //         1, // volume
 //         1, // voices
 //         0, // delay
-// // window.plugins.NativeAudio.preloadSimple('mysound',
-//         tabris.app.getResourceLocation('demo.mp3'),
-//         function() {
-//                 console.info('Preload success: ', arguments);
-//                 window.plugins.NativeAudio.play('mysound', function(msg) {
-//                         console.info('Play success: ', arguments)
-//                 },
-//                 function(msg) {
-//                         console.warn('Play error: ', arguments);
-//                 },
-//                 function(msg) {
-//                         console.info('Play complete: ', arguments);
-//                 });
-//         },
-//         function(msg) {
-//                 console.warn('Preload error: ', arguments);
-//         }
-// );
+window.plugins.NativeAudio.preloadSimple('mysound',
+        tabris.app.getResourceLocation('demo.mp3'),
+        function() {
+                console.info('Preload success: ', arguments);
+                window.plugins.NativeAudio.play('mysound', function(msg) {
+                        console.info('Play success: ', arguments)
+                },
+                function(msg) {
+                        console.warn('Play error: ', arguments);
+                },
+                function(msg) {
+                        console.info('Play complete: ', arguments);
+                });
+        },
+        function(msg) {
+                console.warn('Preload error: ', arguments);
+        }
+);
 
 
 /*

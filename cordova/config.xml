@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.maxapps.audiotest" version="0.1.2">
+<widget id="com.maxapps.audiotest" version="0.1.4">
   <name>AudioTest</name>
   <description>
     Testing audio plugin
@@ -7,5 +7,5 @@
   <author email="maxapps@gmail.com">
     Jeff Carver
   </author>
-  <plugin name="cordova-plugin-yanap" version="0.8.8" />
+  <plugin name="cordova-tabris-nativeaudio" version="0.1.0" />
 </widget>
