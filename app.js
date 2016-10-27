@@ -8,7 +8,7 @@ tabris.create('Page', {
 ).open();
 
 
-if (window.plugins.Media) {
+if (Media) {
   var media = new Media(tabris.app.getResourceLocation('demo.mp3'), 
     function() {
       console.log("playAudio():Audio Success");
